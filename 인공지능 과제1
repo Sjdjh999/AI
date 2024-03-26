@@ -1,0 +1,16 @@
+from google.colab import drive
+drive.mount('/content/drive')
+
+import numpy as np
+import matplotlib.pyplot as plt
+from skimage import io
+from skimage.transform import rotate
+
+img = io.imread('/content/drive/MyDrive/AI lab/인공지능과제1.jpg')
+rot270_img = rotate(img, 270, resize = True)
+io.imshow(rot270_img)
+
+from skimage import draw
+RI = resize(rot270_img,(100, 100))
+BB = (10, 50, 20, 10)
+io.imshow(RI)
